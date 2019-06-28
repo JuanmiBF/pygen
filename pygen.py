@@ -1,12 +1,12 @@
 import os
 import sys
 import logging
-from src.utilities import *
+from utilities import *
 
-MODEL_NAME = "foo"
+MODEL_NAME = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] is not None else "foo"
+MODEL_FOLDER_ROUTE = sys.argv[2] if len(sys.argv) > 1 and sys.argv[2] is not None else "es.beyond.base"
+# TMP_RESULT_PATH = sys.argv[3] if len(sys.argv) > 1 and sys.argv[3] is not None else "C:/Users/juanm/OneDrive/Escritorio/Development/PycharmProjects/pygen/pygen/temp_results"
 TMP_RESULT_PATH = "C:/Users/juanm/OneDrive/Escritorio/Development/PycharmProjects/pygen/pygen/temp_results"
-MODEL_FOLDER_ROUTE = sys.argv[3] if len(sys.argv) > 1 and sys.argv[3] is not None else "es.beyond.base"
-DAO = "dao"
 INTERFACES = "interfaces"
 
 logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
@@ -14,7 +14,7 @@ logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
 def create_directories(result_path):
 	src_path = "{}/{}".format(result_path, lower_case(MODEL_NAME))  # foo
-	dao_path = "{}/{}".format(src_path, DAO)  # foo/dao
+	dao_path = "{}/{}".format(src_path, "dao")  # foo/dao
 	dao_interfaces_path = "{}/{}".format(dao_path, INTERFACES)  # foo/dao/interfaces
 
 	model_path = "{}/{}".format(src_path, "model")  # foo/model
