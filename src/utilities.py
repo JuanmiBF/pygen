@@ -196,3 +196,82 @@ private LocalDateTime fechaBaja;
 
 	return res % (model_folder_route.lower(), lower_case(model_name), camel_case_to_lower_case_underscore(model_name),
 				  model_name.capitalize())
+
+
+def generate_service_interface(model_folder_route, model_name):
+	res = '''package %s.%s.service.interfaces;
+
+
+import %s.%s.model.%s;
+
+
+public interface I%sService {
+
+	
+void guardar(%s %s);
+
+}
+
+
+'''
+
+	return res % (model_folder_route.lower(), lower_case(model_name), model_folder_route.lower(), lower_case(model_name),
+				  model_name.capitalize(), model_name.capitalize(), model_name.capitalize(), lower_case(model_name))
+
+
+def generate_service(model_folder_route, model_name):
+	res = '''package %s.%s.service;
+
+import %s.%s.dao.interfaces.I%sDAO;
+import %s.%s.dao.interfaces.I%sGenericoDAO;
+import %s.%s.model.%s;
+import %s.%s.service.interfaces.I%sService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
+@Service
+public class %sService implements I%sService {
+
+	@Autowired
+	private I%sDAO %sDAO;
+	@Autowired
+	private I%sGenericoDAO %sGenericoDAO;
+
+	@Override
+	public void guardar(%s %s) {
+		%sGenericoDAO.createOrUpdate(%s);
+	}
+
+	public I%sDAO get%sDAO() {
+		return %sDAO;
+	}
+
+	public void set%sDAO(I%sDAO %sDAO) {
+		this.%sDAO = %sDAO;
+	}
+
+	public I%sGenericoDAO get%sGenericoDAO() {
+		return %sGenericoDAO;
+	}
+
+	public void set%sGenericoDAO(I%sGenericoDAO %sGenericoDAO) {
+		this.%sGenericoDAO = %sGenericoDAO;
+	}
+
+}
+
+
+'''
+
+	return res % (model_folder_route.lower(), lower_case(model_name), model_folder_route.lower(), lower_case(model_name),
+				  model_name.capitalize(), model_folder_route.lower(), lower_case(model_name), model_name.capitalize(),
+				  model_folder_route.lower(), lower_case(model_name), model_name.capitalize(), model_folder_route.lower(),
+				  lower_case(model_name), model_name.capitalize(), model_name.capitalize(), model_name.capitalize(),
+				  model_name.capitalize(), lower_case(model_name), model_name.capitalize(), lower_case(model_name),
+				  model_name.capitalize(), lower_case(model_name), lower_case(model_name), lower_case(model_name),
+				  model_name.capitalize(), model_name.capitalize(), lower_case(model_name), model_name.capitalize(),
+				  model_name.capitalize(), lower_case(model_name), lower_case(model_name), lower_case(model_name),
+				  model_name.capitalize(), model_name.capitalize(), lower_case(model_name), model_name.capitalize(),
+				  model_name.capitalize(), lower_case(model_name), lower_case(model_name), lower_case(model_name))

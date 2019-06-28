@@ -71,8 +71,10 @@ def create_service_files(service_interfaces_path, service_path):
 	try:
 		foo_service_interface = open("{}/I{}Service.java".format(service_interfaces_path, MODEL_NAME.capitalize()),
 									 "w+")
+		foo_service_interface.write(generate_service_interface(MODEL_FOLDER_ROUTE, MODEL_NAME))
 
 		foo_service = open("{}/{}Service.java".format(service_path, MODEL_NAME.capitalize()), "w+")
+		foo_service.write(generate_service(MODEL_FOLDER_ROUTE, MODEL_NAME))
 
 		logging.info("Service files created successfully")
 	except Exception as oops:
