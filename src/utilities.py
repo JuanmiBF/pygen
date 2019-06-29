@@ -1,4 +1,5 @@
-lower_case = lambda s: s[:1].lower() + s[1:] if s else ''
+lower_case_first_char = lambda s: s[:1].lower() + s[1:] if s else ''
+upper_case_first_char = lambda s: s[:1].upper() + s[1:] if s else ''
 
 
 def camel_case_to_lower_case_underscore(string):
@@ -27,7 +28,7 @@ public interface I%sDAO {
 }
 '''
 
-	return res % (model_folder_route.lower(), lower_case(model_name), model_name.capitalize())
+	return res % (model_folder_route.lower(), lower_case_first_char(model_name), upper_case_first_char(model_name))
 
 
 def generate_generic_dao_interface(model_folder_route, model_name):
@@ -44,9 +45,10 @@ public interface I%sGenericoDAO extends GenericDAO<%s, Integer> {
 
 '''
 	return res % (
-		model_folder_route.lower(), lower_case(model_name), model_folder_route.lower(), lower_case(model_name),
-		model_name.capitalize(), model_name.capitalize(),
-		model_name.capitalize())
+		model_folder_route.lower(), lower_case_first_char(model_name), model_folder_route.lower(),
+		lower_case_first_char(model_name),
+		upper_case_first_char(model_name), upper_case_first_char(model_name),
+		upper_case_first_char(model_name))
 
 
 def generate_foo_dao(model_folder_route, model_name):
@@ -62,8 +64,9 @@ public class %sDAO extends HibernateDaoSupport implements I%sDAO {
 }'''
 
 	return res % (
-		model_folder_route.lower(), lower_case(model_name), model_folder_route.lower(), lower_case(model_name),
-		model_name.capitalize(), model_name.capitalize(), model_name.capitalize())
+		model_folder_route.lower(), lower_case_first_char(model_name), model_folder_route.lower(),
+		lower_case_first_char(model_name),
+		upper_case_first_char(model_name), upper_case_first_char(model_name), upper_case_first_char(model_name))
 
 
 def generate_foo_generic_dao(model_folder_route, model_name):
@@ -83,9 +86,10 @@ public class %sGenericoDAO extends GenericDAOImpl<%s, Integer> implements I%sGen
 	'''
 
 	return res % (
-		model_folder_route.lower(), lower_case(model_name), model_folder_route.lower(), lower_case(model_name),
-		model_name.capitalize(), model_folder_route.lower(), lower_case(model_name), model_name.capitalize(),
-		model_name.capitalize(), model_name.capitalize(), model_name.capitalize())
+		model_folder_route.lower(), lower_case_first_char(model_name), model_folder_route.lower(),
+		lower_case_first_char(model_name),
+		upper_case_first_char(model_name), model_folder_route.lower(), lower_case_first_char(model_name), upper_case_first_char(model_name),
+		upper_case_first_char(model_name), upper_case_first_char(model_name), upper_case_first_char(model_name))
 
 
 def generate_foo_model(model_folder_route, model_name):
@@ -194,8 +198,9 @@ private LocalDateTime fechaBaja;
 
 	'''
 
-	return res % (model_folder_route.lower(), lower_case(model_name), camel_case_to_lower_case_underscore(model_name),
-				  model_name.capitalize())
+	return res % (
+		model_folder_route.lower(), lower_case_first_char(model_name), camel_case_to_lower_case_underscore(model_name),
+		upper_case_first_char(model_name))
 
 
 def generate_service_interface(model_folder_route, model_name):
@@ -215,8 +220,10 @@ void guardar(%s %s);
 
 '''
 
-	return res % (model_folder_route.lower(), lower_case(model_name), model_folder_route.lower(), lower_case(model_name),
-				  model_name.capitalize(), model_name.capitalize(), model_name.capitalize(), lower_case(model_name))
+	return res % (model_folder_route.lower(), lower_case_first_char(model_name), model_folder_route.lower(),
+				  lower_case_first_char(model_name),
+				  upper_case_first_char(model_name), upper_case_first_char(model_name), upper_case_first_char(model_name),
+				  lower_case_first_char(model_name))
 
 
 def generate_service(model_folder_route, model_name):
@@ -265,13 +272,23 @@ public class %sService implements I%sService {
 
 '''
 
-	return res % (model_folder_route.lower(), lower_case(model_name), model_folder_route.lower(), lower_case(model_name),
-				  model_name.capitalize(), model_folder_route.lower(), lower_case(model_name), model_name.capitalize(),
-				  model_folder_route.lower(), lower_case(model_name), model_name.capitalize(), model_folder_route.lower(),
-				  lower_case(model_name), model_name.capitalize(), model_name.capitalize(), model_name.capitalize(),
-				  model_name.capitalize(), lower_case(model_name), model_name.capitalize(), lower_case(model_name),
-				  model_name.capitalize(), lower_case(model_name), lower_case(model_name), lower_case(model_name),
-				  model_name.capitalize(), model_name.capitalize(), lower_case(model_name), model_name.capitalize(),
-				  model_name.capitalize(), lower_case(model_name), lower_case(model_name), lower_case(model_name),
-				  model_name.capitalize(), model_name.capitalize(), lower_case(model_name), model_name.capitalize(),
-				  model_name.capitalize(), lower_case(model_name), lower_case(model_name), lower_case(model_name))
+	return res % (model_folder_route.lower(), lower_case_first_char(model_name), model_folder_route.lower(),
+				  lower_case_first_char(model_name),
+				  upper_case_first_char(model_name), model_folder_route.lower(), lower_case_first_char(model_name),
+				  upper_case_first_char(model_name),
+				  model_folder_route.lower(), lower_case_first_char(model_name), upper_case_first_char(model_name),
+				  model_folder_route.lower(),
+				  lower_case_first_char(model_name), upper_case_first_char(model_name), upper_case_first_char(model_name),
+				  upper_case_first_char(model_name),
+				  upper_case_first_char(model_name), lower_case_first_char(model_name), upper_case_first_char(model_name),
+				  lower_case_first_char(model_name),
+				  upper_case_first_char(model_name), lower_case_first_char(model_name), lower_case_first_char(model_name),
+				  lower_case_first_char(model_name),
+				  upper_case_first_char(model_name), upper_case_first_char(model_name), lower_case_first_char(model_name),
+				  upper_case_first_char(model_name),
+				  upper_case_first_char(model_name), lower_case_first_char(model_name), lower_case_first_char(model_name),
+				  lower_case_first_char(model_name),
+				  upper_case_first_char(model_name), upper_case_first_char(model_name), lower_case_first_char(model_name),
+				  upper_case_first_char(model_name),
+				  upper_case_first_char(model_name), lower_case_first_char(model_name), lower_case_first_char(model_name),
+				  lower_case_first_char(model_name))
