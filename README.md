@@ -13,6 +13,24 @@ To use this tool you must download it and open a terminal in the folder ```pygen
 
 Those three parameters are optional as said before, but if they are used, they must be set in the order that is shown in this section.
 
+This is the directory structure that will be generated:
+
+```
+foo/
+|-- dao/
+|   |-- interfaces/
+|   |   |-- IFooDAO.java
+|   |   |-- IFooGenericoDAO.java
+|   |-- FooDAO.java
+|   |-- FooGenericoDAO.java
+|-- model/
+|   |-- Foo.java
+|-- service/
+|   |--interfaces/
+|   |   |-- IFooService.java
+|   |-- FooService.java
+```
+
 
 ## Requirements
 - Python 3.6 or above
