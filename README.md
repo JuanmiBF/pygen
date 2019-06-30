@@ -1,41 +1,18 @@
 ## Welcome to Pygen webpage
 
-This is a tool that allows you to create Java models by giving some parameters
+This is a tool that allows you to create Java models and extra necessary files by giving some parameters, those models are based on DAO pattern and work over Spring MVC framework.
 
-## Welcome to GitHub Pages
+## How to use it
 
-You can use the [editor on GitHub](https://github.com/JuanmiBF/pygen/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+To use this tool you must download it and open a terminal in the folder ```pygen/src```. Once there you can make it work by typing:
+```python pygen.py <model_name> <model_folder_route> <result_path>```
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- ```<model_name>``` is the name of the model you want to create, it is optional, if you do not set it, it will become ```foo``` automatically.
+- ```<model_folder_route>``` is the route in the project where the model will be created, separated by dots, it is optional, if you do not set it, it will become ```es.beyond.base``` automatically.
+- ```<result_path>``` is the path where you want the files to be saved, it is optional, if you do not set it, it will become the current working directory.
 
-### Markdown
+Those three parameters are optional as said before, but if they are used, they must be set in the order that is shown in this section.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JuanmiBF/pygen/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Requirements
+- Python 3.6 or above
