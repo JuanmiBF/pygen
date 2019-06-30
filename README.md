@@ -1,3 +1,7 @@
+## Welcome to Pygen webpage
+
+This is a tool that allows you to create Java models by giving some parameters
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/JuanmiBF/pygen/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
