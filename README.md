@@ -1,6 +1,6 @@
 ## Welcome to Pygen webpage
 
-This is a tool that allows you to create Java models and extra necessary files by giving some parameters, those models are based on DAO pattern and work over Spring MVC framework.
+Pygen allows you to generate Java models and extra necessary files by giving some parameters, those models are based on DAO pattern and work over Spring MVC framework.
 
 ## How to use it
 
