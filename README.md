@@ -30,7 +30,8 @@ foo/
 |   |   |-- IFooService.java
 |   |-- FooService.java
 ```
-
+## Development information
+Pygen is developed in Python 3.6.
 
 ## Requirements
-- Python 3.6 or above
+- Python 2.7 or above.
